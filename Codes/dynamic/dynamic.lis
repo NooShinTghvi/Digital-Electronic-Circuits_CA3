@@ -27,13 +27,12 @@
 
  ***** sources *****
  *v      n+  n-  pulse   v1  v2  td  tr   tf   pw   per
-
  vsupply	vm	0	dc	vdd
  vina    a	0	dc  vdd
- vinx    x	0	pulse  gnd  vdd 0  1p 1p 2000p 5000p
+ vinx    x	0	pulse  gnd  vdd 0  1p 1p 2200p 5000p
  vinclk  clk	0	pulse  gnd  vdd 0  1p 1p 5000p 9000p
+
  ***** component *****
- *m   	nd		ng 		ns		nb		model name		w
  x1      clk     vm      x       w1      inverterdynamic
  x2      clk     vm      w1      w2      inverterdynamic
  x3      clk     vm      w2      a       y1      anddynamic
@@ -63,9 +62,8 @@
  ***** type of analysis *****
  ***** transient analysis:
  .tran	0.1ns     200ns   1ns
- *.tran	0.1ns	6u
+
  ***** power :
- *.meas		tran	avgpower avg	power	from=0		to=6u
  .meas tran avgpower avg  power
 
  ***** propagation delay :
@@ -258,8 +256,8 @@
 **warning** measure results may be incorrect
        since initial start time is non-zero.
    avgpower=  1.0602E-04  from=  1.0000E-09     to=  2.0000E-07
-   tphl=  2.1206E-09  targ=  7.1211E-09   trig=  5.0005E-09
-   tplh=  3.1068E-09  targ=  5.1083E-09   trig=  2.0015E-09
+   tphl=  2.3206E-09  targ=  7.3211E-09   trig=  5.0005E-09
+   tplh=  2.9068E-09  targ=  5.1083E-09   trig=  2.2015E-09
 
           ***** job concluded
 1****** HSPICE -- A-2008.03 32-BIT (Feb 26 2008) winnt ******                   
@@ -276,16 +274,16 @@
 
     analysis           time    # points   tot. iter  conv.iter
 
-    op point           0.02           1          47
-    transient          0.61        1991        6095        2562 rev=       157
-    readin             0.02
+    op point           0.10           1          47
+    transient          0.64        1991        6344        2677 rev=       168
+    readin             0.01
     errchk             0.01
     setup              0.01
     output             0.00
-           total cpu time          0.85 seconds
+           total cpu time          0.78 seconds
            total elapsed time         1 seconds
-               job started at  15:13:57 11/14/2018
-               job ended   at  15:13:58 11/14/2018
+               job started at  13:23:27 11/16/2018
+               job ended   at  13:23:28 11/16/2018
 
 
  Init: hspice initialization file: C:\synopsys\Hspice_A-2008.03\hspice.ini

@@ -19,7 +19,6 @@
 Vsupply	Vm	0	DC	VDD
 VinA    A	0	DC  VDD
 VinX    X	0	Pulse  GND  VDD 0  1p 1p 2000p 5000p
-*Pulse  GND  VDD 0  1p 1p 2000p 5000p
 
 ***** Component *****
 X1      Vm      X       W1      inverterSeudo
@@ -43,8 +42,8 @@ Mn1	    out	   	A   	GND  	GND     nmos	l='Lmin'	w='Lmin*Wn'
 
 ***** AND
 .SUBCKT andSeudo    VDD     A       B       out
-Xnand      VDD     A       B       outNand     nandSeudo
-Xinverter  VDD     outNand     out     inverterSeudo
+Xnand      VDD      A       B       wire     nandSeudo
+Xinverter  VDD      wire    out     inverterSeudo
 .ENDS andSeudo
 
 ***** Type of Analysis *****

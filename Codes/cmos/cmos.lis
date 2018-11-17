@@ -27,14 +27,11 @@
 
  ***** sources *****
  *v      n+  n-  pulse   v1  v2  td  tr  tf  pw  per
- *vinc	c	0	pulse  0   vdd 5n 1ps 1ps 50ps 100ps
-
  vsupply	vm	0	dc	vdd
  vina    a	0	dc  vdd
  vinx    x	0	pulse  gnd  vdd 0  1p 1p 2000p 5000p
 
  ***** component *****
- *m   	nd		ng 		ns		nb		model name		w
  x1      vm      x       w1      invertercmos
  x2      vm      w1      w2      invertercmos
  x3      vm      w2      a       y1      andcmos
@@ -56,8 +53,8 @@
 
  ***** and
  .subckt andcmos    vdd     a       b       out
- xnand      vdd     a       b       outnand     nandcmos
- xinverter  vdd     outnand     out     invertercmos
+ xnand      vdd     a       b       wire     nandcmos
+ xinverter  vdd     wire    out     invertercmos
  .ends andcmos
 
  ***** type of analysis *****
@@ -152,7 +149,7 @@
 
  +0:a       =   1.0000  0:vm      =   1.0000  0:w1      = 999.9957m
  +0:w2      =   2.9373u 0:x       =   0.      0:y1      =   2.2466u
- +0:y2      = 999.9964m 3:outnand = 999.9960m 4:outnand =  10.3824u
+ +0:y2      = 999.9964m 3:wire    = 999.9960m 4:wire    =  10.3824u
  +5:2       =   3.8834u 7:2       =   5.2280u
 
 
@@ -280,15 +277,15 @@
     analysis           time    # points   tot. iter  conv.iter
 
     op point           0.06           1         227
-    transient          0.68        1991        6676        2638 rev=       159
-    readin             0.02
+    transient          0.66        1991        6676        2638 rev=       159
+    readin             0.01
     errchk             0.01
-    setup              0.02
+    setup              0.01
     output             0.00
-           total cpu time          0.81 seconds
+           total cpu time          0.77 seconds
            total elapsed time         1 seconds
-               job started at  15:17:24 11/14/2018
-               job ended   at  15:17:25 11/14/2018
+               job started at  13:06:13 11/16/2018
+               job ended   at  13:06:13 11/16/2018
 
 
  Init: hspice initialization file: C:\synopsys\Hspice_A-2008.03\hspice.ini

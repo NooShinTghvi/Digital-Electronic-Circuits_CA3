@@ -42,8 +42,8 @@ Mn1	    out	   	A   	GND  	GND     nmos	l='Lmin'	w='Lmin*Wn'
 
 ***** AND
 .SUBCKT andCmos    VDD     A       B       out
-Xnand      VDD     A       B       outNand     nandCmos
-Xinverter  VDD     outNand     out     inverterCmos
+Xnand      VDD     A       B       wire     nandCmos
+Xinverter  VDD     wire    out     inverterCmos
 .ENDS andCmos
 
 ***** Type of Analysis *****

@@ -30,7 +30,6 @@
  vsupply	vm	0	dc	vdd
  vina    a	0	dc  vdd
  vinx    x	0	pulse  gnd  vdd 0  1p 1p 2000p 5000p
- *pulse  gnd  vdd 0  1p 1p 2000p 5000p
 
  ***** component *****
  x1      vm      x       w1      inverterseudo
@@ -54,8 +53,8 @@
 
  ***** and
  .subckt andseudo    vdd     a       b       out
- xnand      vdd     a       b       outnand     nandseudo
- xinverter  vdd     outnand     out     inverterseudo
+ xnand      vdd      a       b       wire     nandseudo
+ xinverter  vdd      wire    out     inverterseudo
  .ends andseudo
 
  ***** type of analysis *****
@@ -149,7 +148,7 @@
 
  +0:a       =   1.0000  0:vm      =   1.0000  0:w1      = 550.1196m
  +0:w2      =  28.9450u 0:x       =   0.      0:y1      =   9.7216u
- +0:y2      =  16.1787u 3:outnand = 999.9989m 4:outnand = 615.6766m
+ +0:y2      =  16.1787u 3:wire    = 999.9989m 4:wire    = 615.6766m
  +5:2       =   3.8861u 7:2       =  41.0583m
 
 
@@ -276,16 +275,16 @@
 
     analysis           time    # points   tot. iter  conv.iter
 
-    op point           0.08           1         243
-    transient          0.45        1991        2984        1407 rev=        81
+    op point           0.04           1         243
+    transient          0.33        1991        2984        1407 rev=        81
     readin             0.02
     errchk             0.01
-    setup              0.02
+    setup              0.01
     output             0.00
-           total cpu time          0.72 seconds
+           total cpu time          0.53 seconds
            total elapsed time         1 seconds
-               job started at  15:48:25 11/14/2018
-               job ended   at  15:48:26 11/14/2018
+               job started at  13:30:51 11/16/2018
+               job ended   at  13:30:51 11/16/2018
 
 
  Init: hspice initialization file: C:\synopsys\Hspice_A-2008.03\hspice.ini

@@ -18,7 +18,7 @@
 *V      N+  N-  Pulse   V1  V2  TD  TR   TF   PW   PER
 Vsupply	Vm	0	DC	VDD
 VinA    A	0	DC  VDD
-VinX    X	0	Pulse  GND  VDD 0  1p 1p 2000p 5000p
+VinX    X	0	Pulse  GND  VDD 0  1p 1p 2200p 5000p
 VinClk  clk	0	Pulse  GND  VDD 0  1p 1p 5000p 9000p
 
 ***** Component *****
