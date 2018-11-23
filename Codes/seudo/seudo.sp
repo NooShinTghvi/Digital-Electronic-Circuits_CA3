@@ -9,7 +9,7 @@
 +GND = 0V
 +Lmin = 45n
 +Wp = 1
-+Wn = 3
++Wn = 2
 
 ***** Temperature *****
 .temp	25
@@ -19,7 +19,7 @@
 Vsupply	Vm	0	DC	VDD
 Vgnd	Vg	0	DC	GND
 VinA    A	0	Pulse  GND  VDD 0  1p 1p 2000p 5000p
-VinX    X	0	GND
+VinX    X	0	DC	GND
 
 ***** Component *****
 X1      Vm      Vg      X       W1      inverterSeudo
@@ -30,7 +30,6 @@ X4      Vm      Vg      W1      A       Y2      andSeudo
 ***** NAND
 .SUBCKT nandSeudo       VDD     GND     A       B       out
 Mp1		out	  	GND   	VDD	    VDD		pmos	l='Lmin'	w='Lmin*Wp'
-Mp2     out     GND   	VDD     VDD   	pmos	l='Lmin'    w='Lmin*Wp'
 Mn1	    2	   	B   	GND  	GND     nmos	l='Lmin'	w='Lmin*Wn'
 Mn2	    out	   	A   	2  		2     	nmos	l='Lmin'	w='Lmin*Wn'
 .ENDS nandSeudo

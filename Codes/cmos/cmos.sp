@@ -17,8 +17,9 @@
 ***** Sources *****
 *V      N+  N-  Pulse   V1  V2  TD  TR  TF  PW  PER
 Vsupply	Vm	0	DC	VDD
-VinA    A	0	Pulse  GND  VDD 0  1p 1p 2000p 5000p
-VinX    X	0	DC	GND
+VinA    A	0	DC	VDD
+VinX    X	0	DC	VDD
+*Pulse  GND  VDD 0  1p 1p 2000p 5000p
 
 ***** Component *****
 X1      Vm      X       W1      inverterCmos
